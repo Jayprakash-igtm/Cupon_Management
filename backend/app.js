@@ -16,7 +16,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI);
 
 const store = MongoStore.create({ // Create a new instance using MongoStore.create
     mongoUrl: process.env.MONGO_URI, // Pass the mongoUrl directly
