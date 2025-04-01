@@ -8,14 +8,21 @@ const cors = require('cors');
 const session = require('express-session');
 const {getClaimedcouponforUser} = require('./controller/getClaimedCoupon.js')
 const cookieParser = require('cookie-parser');
-
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-// Middlewares
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const store = MongoStore.create({ // Create a new instance using MongoStore.create
+    mongoUrl: process.env.MONGO_URI, // Pass the mongoUrl directly
+    mongooseConnection: mongoose.connection,
+    collectionName: 'sessions' // Optional: specify the collection name
+});
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,12 +31,17 @@ app.use(cors({
   origin: 'http://localhost:5173', 
   credentials: true, 
 }));
-const secretKey = process.env.JWT_SECRET
+
 app.use(session({
-  secret: secretKey, 
+  secret: process.env.JWT_SECRET,
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false } 
+  saveUninitialized: false,
+  store: store, // Use the created store instance
+  cookie: {
+      secure: process.env.NODE_ENV === 'production',
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 24 hours
+  },
 }));
 
 // Database Connection
