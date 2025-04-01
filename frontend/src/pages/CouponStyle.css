@@ -1,0 +1,599 @@
+CouponStyles.css
+
+/*
+.coupon-management-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .coupon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .add-coupon-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .add-coupon-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .error-message {
+    background-color: #ffebee;
+    color: #d32f2f;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .coupon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .no-coupons-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    color: #757575;
+  }
+  
+  /* Coupon Card Styles */
+  /*
+  .coupon-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .coupon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .coupon-header {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+  }
+  
+  .coupon-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+  
+  .status-claimed {
+    background-color: #e0f2f1;
+    color: #00897b;
+  }
+  
+  .status-available {
+    background-color: #e8f5e9;
+    color: #43a047;
+  }
+  
+  .coupon-code {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .coupon-body {
+    padding: 16px;
+  }
+  
+  .coupon-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f44336;
+    margin-bottom: 12px;
+  }
+  
+  .coupon-description {
+    color: #616161;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .coupon-details {
+    margin-bottom: 16px;
+  }
+  
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .detail-label {
+    color: #757575;
+    font-weight: 600;
+  }
+  
+  .detail-value {
+    color: #212121;
+  }
+  
+  .detail-value.active {
+    color: #43a047;
+    font-weight: 600;
+  }
+  
+  .detail-value.inactive {
+    color: #e53935;
+    font-weight: 600;
+  }
+  
+  .claimed-by-section {
+    margin-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+  }
+  
+  .claimed-by-section h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #424242;
+  }
+  
+  .claimed-list {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+  
+  .claim-item {
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  
+  .claim-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .more-claims {
+    text-align: center;
+    color: #757575;
+    font-size: 12px;
+    padding: 4px;
+  }
+  
+  .coupon-actions {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    padding: 12px 16px;
+  }
+  
+  .coupon-actions button {
+    flex: 1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+  
+  .edit-btn {
+    background-color: #2196f3;
+    color: white;
+    margin-right: 8px;
+  }
+  
+  .edit-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+
+  */
+
+
+  /* CouponStyles.css */
+
+.coupon-management-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.coupon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px; /* Adjusted margin for consistency */
+}
+
+.add-coupon-btn {
+  background-color: #4f46e5; /* Merged color from the first set */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px; /* Merged radius from the first set */
+  cursor: pointer;
+  font-weight: 600; /* Merged font-weight */
+  transition: background-color 0.2s;
+}
+
+.add-coupon-btn:hover {
+  background-color: #4338ca; /* Merged hover color */
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 30px;
+  font-size: 18px; /* Adjusted font size */
+  color: #666; /* Adjusted color */
+}
+
+.error-message {
+  background-color: #ffebee; /* Merged background color */
+  color: #d32f2f; /* Merged text color */
+  padding: 15px;
+  border-radius: 4px; /* Merged radius */
+  margin-bottom: 20px;
+}
+
+.coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.no-coupons-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  color: #757575;
+}
+
+/* Coupon Card Styles */
+.coupon-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.coupon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.coupon-header {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.coupon-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.status-claimed {
+  background-color: #e0f2f1;
+  color: #00897b;
+}
+
+.status-available {
+  background-color: #e8f5e9;
+  color: #43a047;
+}
+
+.coupon-code {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.coupon-body {
+  padding: 16px;
+}
+
+.coupon-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f44336;
+  margin-bottom: 12px;
+}
+
+.coupon-description {
+  color: #616161;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.coupon-details {
+  margin-bottom: 16px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.detail-label {
+  color: #757575;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: #212121;
+}
+
+.detail-value.active {
+  color: #43a047;
+  font-weight: 600;
+}
+
+.detail-value.inactive {
+  color: #e53935;
+  font-weight: 600;
+}
+
+.claimed-by-section {
+  margin-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 16px;
+}
+
+.claimed-by-section h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #424242;
+}
+
+.claimed-list {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.claim-item {
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.claim-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.more-claims {
+  text-align: center;
+  color: #757575;
+  font-size: 12px;
+  padding: 4px;
+}
+
+.coupon-actions {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  padding: 12px 16px;
+}
+
+.coupon-actions button {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+  margin-right: 8px;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.close-modal-btn:hover {
+  color: #1f2937;
+}
+
+.modal-content form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input {
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background-color: white;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #4338ca;
+}
+
+.save-btn:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}

@@ -1,0 +1,9 @@
+{
+    "name": "cupon-distributor",
+    "version": "1.0.0",
+    "scripts": {
+      "start:backend": "cd backend && node app.js",
+      "start:frontend": "cd frontend && npm run dev",
+      "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+    }
+  }
